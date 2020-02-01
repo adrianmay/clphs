@@ -10,6 +10,7 @@ module CLPHS.FD.Domain
     , findMax
     , findMin
     , range
+    , range'
     , toList
     , union
     , intersection
@@ -148,6 +149,9 @@ findMin (Range from _) = from
 
 range :: Bound -> Bound -> Domain
 range l u = Range l u
+
+range' :: Int -> Int -> Domain
+range' l u = Range (N l) (N u)
 
 -- | Converts a domain into the list of integers it contains
 toList :: Domain -> [Int]
